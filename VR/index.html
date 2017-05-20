@@ -26,8 +26,8 @@
       <img id="close1" crossorigin="anonymous" src="image/popupbouteille1X.png">
       <img id="close2" crossorigin="anonymous" src="image/popupbouteille2X.png">
       <img id="cadre" crossorigin="anonymous" src="image/cadre.png">
-	    <img id="i-drone" crossorigin="anonymous" src="image/drone.png">
-	    <video id="v-drone" autoplay loop="true" src="Video/drone vignes.mp4">
+	    <img id="i-drone" crossorigin="anonymous" src="image/vue aerienne.png">
+	    <video id="v-drone" autoplay loop src="Video/drone vignes.mp4" webkit-playsinline>
       <video id="v-interview" autoplay loop="true" muted src="video/itw_winemaker_videoHD.mp4"></video>
 	</a-asset>
 
@@ -97,6 +97,7 @@
         document.querySelector('#vigneron').setAttribute('visible', 'false');
         document.querySelector('#bouteille1').setAttribute('visible', 'false');
         document.querySelector('#bouteille-2').setAttribute('visible', 'false');
+		document.querySelector('#bouteille-3').setAttribute('visible', 'false');
         document.querySelector('#back').setAttribute('visible', 'true');
         document.querySelector('#text-1').setAttribute('visible', 'false');
         document.querySelector('#text-2').setAttribute('visible', 'true');
@@ -112,6 +113,7 @@
         document.querySelector('#vigneron').setAttribute('visible', 'false');
         document.querySelector('#bouteille1').setAttribute('visible', 'false');
         document.querySelector('#bouteille-2').setAttribute('visible', 'false');
+		document.querySelector('#bouteille-3').setAttribute('visible', 'false');
         document.querySelector('#back').setAttribute('visible', 'true');
       });
     document.querySelector('#curve3').addEventListener('click', function() {
@@ -124,6 +126,7 @@
         document.querySelector('#vigneron').setAttribute('visible', 'false');
         document.querySelector('#bouteille1').setAttribute('visible', 'false');
         document.querySelector('#bouteille-2').setAttribute('visible', 'false');
+		document.querySelector('#bouteille-3').setAttribute('visible', 'false');
         document.querySelector('#back').setAttribute('visible', 'true');
       });
     document.querySelector('#back').addEventListener('click', function() {
@@ -136,6 +139,7 @@
         document.querySelector('#vigneron').setAttribute('visible', 'true');
         document.querySelector('#bouteille1').setAttribute('visible', 'true');
         document.querySelector('#bouteille-2').setAttribute('visible', 'true');
+		document.querySelector('#bouteille-3').setAttribute('visible', 'true');
         document.querySelector('#interview').setAttribute('visible', 'false');
         document.querySelector('#back').setAttribute('visible', 'false');
       });
@@ -149,6 +153,8 @@
         document.querySelector('#vigneron').setAttribute('visible', 'false');
         document.querySelector('#bouteille1').setAttribute('visible', 'false');
         document.querySelector('#bouteille-2').setAttribute('visible', 'false');
+		document.querySelector('#bouteille-3').setAttribute('visible', 'false');
+		document.querySelector('#cadreBottles').setAttribute('visible', 'false');
         document.querySelector('#back').setAttribute('visible', 'true');
       });
     document.querySelector('#bouteille1').addEventListener('click', function() {
@@ -192,6 +198,7 @@
         document.querySelector('#vigneron').setAttribute('visible', 'false');
         document.querySelector('#bouteille1').setAttribute('visible', 'false');
         document.querySelector('#bouteille-2').setAttribute('visible', 'false');
+		document.querySelector('#bouteille-3').setAttribute('visible', 'false');
         document.querySelector('#interview').setAttribute('visible', 'true');
         document.querySelector('#back').setAttribute('visible', 'true');
       });
