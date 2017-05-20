@@ -33,8 +33,9 @@
 
     <!-- Image -->
     <a-image id="vigneron" src="#i-vigneron" width="4" height="6" position="0 2 -7"></a-image>
-    <a-image id="bouteille1" src="#bouteille" width="1" height="4" position="-6.405 2 -4.030" rotation="0 46.123 0"></a-image>
-    <a-image id="bouteille-2" src="#bouteille2" width="1" height="4" position="-8.711 2 -2.348" rotation="0 51.452 0"></a-image>
+    <a-image id="bouteille1" src="#bouteille" width="1" height="4" position="-5 2 8" rotation="0 0 0"></a-image>
+    <a-image id="bouteille-2" src="#bouteille2" width="1" height="4" position="-1 2 8" rotation="0 0 0"></a-image>
+    <a-image id="bouteille-3" src="#bouteille" width="1" height="4" position="3 2 8" rotation="0 0 0"></a-image>
     <a-image id="back" src="#i-back" width="2" height="2" position="-4 0 -3" visible="false" set-image="on: click; target: #fond; src: #i-fond"></a-image>
 
 	<!-- Video 360° -->
@@ -158,6 +159,12 @@
         document.querySelector('#popupbouteille2').setAttribute('visible', 'true');
         document.querySelector('#closePopup2').setAttribute('visible', 'true');
     });
+    document.querySelector('#bouteille-3').addEventListener('click', function() {
+        document.querySelector('#popupbouteille1').setAttribute('visible', 'false');
+        document.querySelector('#closePopup1').setAttribute('visible', 'false');
+        document.querySelector('#popupbouteille2').setAttribute('visible', 'true');
+        document.querySelector('#closePopup2').setAttribute('visible', 'true');
+    });
     document.querySelector('#closePopup1').addEventListener('click', function() {
         document.querySelector('#popupbouteille1').setAttribute('visible', 'false');
         document.querySelector('#closePopup1').setAttribute('visible', 'false');
@@ -171,7 +178,7 @@
         document.querySelector('#closePopup2').setAttribute('visible', 'false');
     });
     /* video interview */
-  document.querySelector('#vigneron').addEventListener('click', function() {
+     document.querySelector('#vigneron').addEventListener('click', function() {
         document.querySelector('#curve1').setAttribute('visible', 'false');
         document.querySelector('#curve2').setAttribute('visible', 'false');
         document.querySelector('#curve3').setAttribute('visible', 'false');
