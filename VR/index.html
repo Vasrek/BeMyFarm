@@ -19,6 +19,10 @@
       <img id="i-360-2" crossorigin="anonymous" src="image/interieur cave.png">
       <img id="i-360-3" crossorigin="anonymous" src="image/Fabrication.png">
       <img id="i-back" crossorigin="anonymous" src="image/back.png">
+      <img id="popup1" crossorigin="anonymous" src="image/etiquette_vin.png">
+      <img id="popup2" crossorigin="anonymous" src="image/etiquette_vin_2.png">
+      <img id="close1" crossorigin="anonymous" src="image/popupbouteille1X.png">
+      <img id="close2" crossorigin="anonymous" src="image/popupbouteille2X.png">
 	  <img id="i-drone" crossorigin="anonymous" src="image/drone.png">
 	  <video id="v-drone" autoplay loop="true" src="Video/drone vignes.mp4">
 	</a-asset>
@@ -26,13 +30,13 @@
     <!-- SkyBox -->
     <a-sky id="fond" radius="20" src="#i-fond"></a-sky>
 
+    <!-- Image -->
     <a-image id="vigneron" src="#i-vigneron" width="4" height="6" position="0 2 -7"></a-image>
     <a-image id="bouteille1" src="#bouteille" width="1" height="4" position="-6.405 2 -4.030" rotation="0 46.123 0"></a-image>
     <a-image id="bouteille-2" src="#bouteille2" width="1" height="4" position="-8.711 2 -2.348" rotation="0 51.452 0"></a-image>
     <a-image id="back" src="#i-back" width="2" height="2" position="-4 0 -3" visible="false" set-image="on: click; target: #fond; src: #i-fond"></a-image>
-
+    
 	<!-- Video 360° -->
-
     <a-image id="drone" src="#i-drone" width="4" height="6" position="0 15 -7" rotation="50 0 0" set-image="on: click; target: #fond; src: #v-drone">
 	  <a-animation attribute="material.opacity" begin="mouseenter" from="0.7" to="1" dur="300"></a-animation>
       <a-animation attribute="material.opacity" begin="mouseleave" from="1" to="0.7" dur="300"></a-animation>
@@ -61,6 +65,10 @@
 
     <!-- Camera -->
   <a-entity id="camera" camera mouse-cursor look-controls position="0 1 0">
+    <a-image id="popupbouteille1" src="#popup1" width="1.1" height="1.7" position="0 0 -1" visible="false"></a-image>
+    <a-image id="popupbouteille2" src="#popup2" width="1.1" height="1.7" position="0 0 -1" visible="false"></a-image>
+    <a-image id="closePopup1" src="#close1" width="0.07" height="0.07" position="0.4 0.63 -0.8" visible="false"></a-image>
+    <a-image id="closePopup2" src="#close2" width="0.07" height="0.07" position="0.4 0.63 -0.8" visible="false"></a-image>
     <a-entity position="0 0 -1"
       scale=".065 .065 .065"
             geometry="primitive: ring; radiusOuter: 0.30;
@@ -122,7 +130,7 @@
         document.querySelector('#bouteille-2').setAttribute('visible', 'true');
         document.querySelector('#back').setAttribute('visible', 'false');
       });
-	document.querySelector('#drone').addEventListener('click', function() {
+  	document.querySelector('#drone').addEventListener('click', function() {
         document.querySelector('#curve1').setAttribute('visible', 'false');
         document.querySelector('#curve2').setAttribute('visible', 'false');
         document.querySelector('#curve3').setAttribute('visible', 'false');
@@ -134,7 +142,30 @@
         document.querySelector('#bouteille-2').setAttribute('visible', 'false');
         document.querySelector('#back').setAttribute('visible', 'true');
       });
-
+    document.querySelector('#bouteille1').addEventListener('click', function() {
+        document.querySelector('#popupbouteille1').setAttribute('visible', 'true');
+        document.querySelector('#closePopup1').setAttribute('visible', 'true');
+        document.querySelector('#popupbouteille2').setAttribute('visible', 'false');
+        document.querySelector('#closePopup2').setAttribute('visible', 'false');
+    });
+    document.querySelector('#bouteille-2').addEventListener('click', function() {
+        document.querySelector('#popupbouteille1').setAttribute('visible', 'false');
+        document.querySelector('#closePopup1').setAttribute('visible', 'false');
+        document.querySelector('#popupbouteille2').setAttribute('visible', 'true');
+        document.querySelector('#closePopup2').setAttribute('visible', 'true');
+    });
+    document.querySelector('#closePopup1').addEventListener('click', function() {
+        document.querySelector('#popupbouteille1').setAttribute('visible', 'false');
+        document.querySelector('#closePopup1').setAttribute('visible', 'false');
+        document.querySelector('#popupbouteille2').setAttribute('visible', 'false');
+        document.querySelector('#closePopup2').setAttribute('visible', 'false');
+    });
+    document.querySelector('#closePopup2').addEventListener('click', function() {
+        document.querySelector('#popupbouteille1').setAttribute('visible', 'false');
+        document.querySelector('#closePopup1').setAttribute('visible', 'false');
+        document.querySelector('#popupbouteille2').setAttribute('visible', 'false');
+        document.querySelector('#closePopup2').setAttribute('visible', 'false');
+    });
     </script>
 </body>
 </html>
