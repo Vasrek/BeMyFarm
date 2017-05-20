@@ -25,6 +25,7 @@
       <img id="close2" crossorigin="anonymous" src="image/popupbouteille2X.png">
 	  <img id="i-drone" crossorigin="anonymous" src="image/drone.png">
 	  <video id="v-drone" autoplay loop="true" src="Video/drone vignes.mp4">
+      <video id="v-interview" autoplay loop="true" muted src="video/itw_winemaker_videoHD.mp4"></video>
 	</a-asset>
 
     <!-- SkyBox -->
@@ -35,14 +36,16 @@
     <a-image id="bouteille1" src="#bouteille" width="1" height="4" position="-6.405 2 -4.030" rotation="0 46.123 0"></a-image>
     <a-image id="bouteille-2" src="#bouteille2" width="1" height="4" position="-8.711 2 -2.348" rotation="0 51.452 0"></a-image>
     <a-image id="back" src="#i-back" width="2" height="2" position="-4 0 -3" visible="false" set-image="on: click; target: #fond; src: #i-fond"></a-image>
-    
+
 	<!-- Video 360° -->
     <a-image id="drone" src="#i-drone" width="4" height="6" position="0 15 -7" rotation="50 0 0" set-image="on: click; target: #fond; src: #v-drone">
 	  <a-animation attribute="material.opacity" begin="mouseenter" from="0.7" to="1" dur="300"></a-animation>
       <a-animation attribute="material.opacity" begin="mouseleave" from="1" to="0.7" dur="300"></a-animation>
 	</a-image>
 
-	
+  <!-- video interview  -->
+  <a-video id="interview" src="#v-interview" width="16" height="9" position="0 2 -10" visible="false"></a-video>
+
     <!-- Curved image {onclick} skybox change-->
     <a-curvedimage id="curve1" class="link" src="#i-360-1" height="1" radius="6" theta-length="20" rotation="0 93.220 0" scale="4 4 2" position="2.739 6 6.137" opacity="0.7" set-image="on: click; target: #fond; src: #i-360-1">
       <a-animation attribute="material.opacity" begin="mouseenter" from="0.7" to="1" dur="300"></a-animation>
@@ -55,7 +58,7 @@
     <a-curvedimage id="curve3" class="link" src="#i-360-3" height="1" radius="6" theta-length="20" rotation="0 93.220 0" scale="4 4 2" position="2.739 -6 6.137" opacity="0.7" set-image="on: click; target: #fond; src: #i-360-3">
       <a-animation attribute="material.opacity" begin="mouseenter" from="0.7" to="1" dur="300"></a-animation>
       <a-animation attribute="material.opacity" begin="mouseleave" from="1" to="0.7" dur="300"></a-animation>
-    </a-curvedimage> 
+    </a-curvedimage>
     </a-curvedimage>
 
     <!-- Texte d'information -->
@@ -128,6 +131,7 @@
         document.querySelector('#vigneron').setAttribute('visible', 'true');
         document.querySelector('#bouteille1').setAttribute('visible', 'true');
         document.querySelector('#bouteille-2').setAttribute('visible', 'true');
+        document.querySelector('#interview').setAttribute('visible', 'false');
         document.querySelector('#back').setAttribute('visible', 'false');
       });
   	document.querySelector('#drone').addEventListener('click', function() {
@@ -166,6 +170,20 @@
         document.querySelector('#popupbouteille2').setAttribute('visible', 'false');
         document.querySelector('#closePopup2').setAttribute('visible', 'false');
     });
+    /* video interview */
+  document.querySelector('#vigneron').addEventListener('click', function() {
+        document.querySelector('#curve1').setAttribute('visible', 'false');
+        document.querySelector('#curve2').setAttribute('visible', 'false');
+        document.querySelector('#curve3').setAttribute('visible', 'false');
+        document.querySelector('#text-1').setAttribute('visible', 'false');
+        document.querySelector('#text-2').setAttribute('visible', 'false');
+        document.querySelector('#text-3').setAttribute('visible', 'false');
+        document.querySelector('#vigneron').setAttribute('visible', 'false');
+        document.querySelector('#bouteille1').setAttribute('visible', 'false');
+        document.querySelector('#bouteille-2').setAttribute('visible', 'false');
+        document.querySelector('#interview').setAttribute('visible', 'true');
+        document.querySelector('#back').setAttribute('visible', 'true');
+      });
     </script>
 </body>
 </html>
