@@ -7,125 +7,98 @@
   <script src="https://unpkg.com/aframe-event-set-component@3.x.x/dist/aframe-event-set-component.min.js"></script>
   <script src="https://npmcdn.com/aframe-animation-component@3.0.1"></script>
   <script src="components/set-image.js"></script>
-
 </head>
 <body>
   <a-scene>
     <a-asset>
-      <img id="i-vigneron" crossorigin="anonymous" src="image/stock-photo-man-tasting-wine-in-cellar-saint-emilion-bordeaux-wineyard-france-285674675.jpg">
-      <img id="bouteille" crossorigin="anonymous" src="image/italian-wine-bottle.png">
+      <img id="i-vigneron" crossorigin="anonymous" src="image/producteur.png">
+      <img id="bouteille" crossorigin="anonymous" src="image/saumuraffinite.png">
+      <img id="bouteille2" crossorigin="anonymous" src="image/saumurelegance.png">
       <img id="i-fond" crossorigin="anonymous" src="image/Photo Intro.png">
       <img id="i-360-1" crossorigin="anonymous" src="image/Vigne visite racine.png">
       <img id="i-360-2" crossorigin="anonymous" src="image/interieur cave.png">
       <img id="i-360-3" crossorigin="anonymous" src="image/Fabrication.png">
       <img id="i-back" crossorigin="anonymous" src="image/back.png">
-	</a-asset>
+  </a-asset>
 
-      <a-sky id="fond" radius="40" src="#i-fond"></a-sky>
+    <!-- SkyBox -->
+    <a-sky id="fond" radius="20" src="#i-fond"></a-sky>
 
-      <a-image id="vigneron" src="#i-vigneron" width="4" height="6" position="0 2 -5"></a-image>
-		  <a-image id="bouteille1" src="#bouteille" width="4" height="4" position="-6.405 2 -4.030" rotation="0 46.123 0"></a-image>
-      <a-image id="bouteille2" src="#bouteille" width="4" height="4" position="-8.711 2 -2.348" rotation="0 51.452 0"></a-image>
-      <a-image id="bouteille3" src="#bouteille" width="4" height="4" position="-10.596 2 2.374" rotation="0 97.002 0"></a-image>
-      <a-image id="back" src="#i-back" width="2" height="2" position="-4 0 -3" visible="false" set-image="on: click; target: #fond; src: #i-fond"></a-image>
+    <a-image id="vigneron" src="#i-vigneron" width="4" height="6" position="0 2 -7"></a-image>
+  <a-image id="bouteille1" src="#bouteille" width="1" height="4" position="-6.405 2 -4.030" rotation="0 46.123 0"></a-image>
+    <a-image id="bouteille2" src="#bouteille2" width="1" height="4" position="-8.711 2 -2.348" rotation="0 51.452 0"></a-image>
+    <a-image id="back" src="#i-back" width="2" height="2" position="-4 0 -3" visible="false" set-image="on: click; target: #fond; src: #i-fond"></a-image>
 
-      <a-curvedimage id="curve1" class="link" src="#i-360-1" height="1" radius="6" theta-length="20" rotation="0 93.220 0" scale="4 4 2" position="2.739 6 6.137"  set-image="on: click; target: #fond; src: #i-360-1">
-      </a-curvedimage>
-      <a-curvedimage id="curve2" class="link" src="#i-360-2" height="1" radius="6" theta-length="20" rotation="0 93.220 0" scale="4 4 2" position="2.739 0 6.137"  set-image="on: click; target: #fond; src: #i-360-2">
-      </a-curvedimage>
-      <a-curvedimage id="curve3" class="link" src="#i-360-3" height="1" radius="6" theta-length="20" rotation="0 93.220 0" scale="4 4 2" position="2.739 -6 6.137" set-image="on: click; target: #fond; src: #i-360-3">
-      </a-curvedimage>
+    <!-- Curved image {onclick} skybox change-->
+    <a-curvedimage id="curve1" class="link" src="#i-360-1" height="1" radius="6" theta-length="20" rotation="0 93.220 0" scale="4 4 2" position="2.739 6 6.137" opacity="0.7" set-image="on: click; target: #fond; src: #i-360-1">
+      <a-animation attribute="material.opacity" begin="mouseenter" from="0.7" to="1" dur="300"></a-animation>
+        <a-animation attribute="material.opacity" begin="mouseleave" from="1" to="0.7" dur="300"></a-animation>
+    </a-curvedimage>
+    <a-curvedimage id="curve2" class="link" src="#i-360-2" height="1" radius="6" theta-length="20" rotation="0 93.220 0" scale="4 4 2" position="2.739 0 6.137" opacity="0.7" set-image="on: click; target: #fond; src: #i-360-2">
+      <a-animation attribute="material.opacity" begin="mouseenter" from="0.7" to="1" dur="300"></a-animation>
+        <a-animation attribute="material.opacity" begin="mouseleave" from="1" to="0.7" dur="300"></a-animation>
+    </a-curvedimage>
+    <a-curvedimage id="curve3" class="link" src="#i-360-3" height="1" radius="6" theta-length="20" rotation="0 93.220 0" scale="4 4 2" position="2.739 -6 6.137" opacity="0.7" set-image="on: click; target: #fond; src: #i-360-3">
+      <a-animation attribute="material.opacity" begin="mouseenter" from="0.7" to="1" dur="300"></a-animation>
+        <a-animation attribute="material.opacity" begin="mouseleave" from="1" to="0.7" dur="300"></a-animation>
+    </a-curvedimage> 
 
-      <a-text id="text-1" value="Champs de vignes" rotation="0 -93.220 0" scale="4 4 2" position="14.382 2.866 -2.755"></a-text>
-      <a-text id="text-2" value="Cave" rotation="0 -93.220 0" scale="4 4 2" position="13.333 -2.599 0.485"></a-text>
-      <a-text id=text-3 value="Mise en bouteilles" rotation="0 -88.064 0" scale="4 4 2" position="12.688 -8.866 -2.419"></a-text>
+    <!-- Texte d'information -->
+  <a-text id="text-1" value="Champs de vignes" rotation="0 -93.220 0" scale="4 4 2" position="14.382 2.866 -2.755"></a-text>
+    <a-text id="text-2" value="Cave" rotation="0 -93.220 0" scale="4 4 2" position="13.333 -2.599 0.485"></a-text>
+    <a-text id=text-3 value="Mise en bouteilles" rotation="0 -88.064 0" scale="4 4 2" position="12.688 -8.866 -2.419"></a-text>
 
-      <a-camera camera mouse-cursor look-controls keyboard-shortcuts>
-      </a-camera>
-
-        <!--<a-entity camera>
-			<a-entity cursor="fuse: true; fuseTimeout: 500"
-            position="0 0 -1"
-            geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
-            material="color: black; shader: flat">
-			</a-entity>-->
-		</a-entity>
+    <!-- Camera -->
+  <a-entity id="camera" camera mouse-cursor look-controls position="0 1 0">
+    <a-entity position="0 0 -1"
+      scale=".065 .065 .065"
+            geometry="primitive: ring; radiusOuter: 0.30;
+      radiusInner: 0.20;"
+      material="color: red; shader: flat"
+      cursor="maxDistance: 30; fuse: true">
+      <a-animation begin="fusing" easing="ease-in" attribute="scale"
+        fill="forwards" from=".02 .02 .02" to="0.065 0.065 0.065" dur="1500"></a-animation>
+        </a-entity>
+    </a-entity>
   </a-scene>
+
   <script type="text/javascript">
     document.querySelector('#curve1').addEventListener('click', function() {
       document.querySelector('#curve1').setAttribute('visible', 'false');
-      document.querySelector('#curve2').setAttribute('visible', 'true');
-      document.querySelector('#curve3').setAttribute('visible', 'true');
-      document.querySelector('#curve1').setAttribute('opacity', '0.7');
-      document.querySelector('#curve2').setAttribute('opacity', '0.7');
-      document.querySelector('#curve3').setAttribute('opacity', '0.7');
-      document.querySelector('#text-1').setAttribute('visible', 'false');
-      document.querySelector('#text-2').setAttribute('visible', 'true');
-      document.querySelector('#text-3').setAttribute('visible', 'true');
-      document.querySelector('#text-2').setAttribute('opacity', '0.5');
-      document.querySelector('#text-3').setAttribute('opacity', '0.5');
-      document.querySelector('#vigneron').setAttribute('visible', 'false');
-      document.querySelector('#bouteille1').setAttribute('visible', 'false');
-      document.querySelector('#bouteille2').setAttribute('visible', 'false');
-      document.querySelector('#bouteille3').setAttribute('visible', 'false');
-      document.querySelector('#back').setAttribute('visible', 'true');
-    });
-      document.querySelector('#curve2').addEventListener('click', function() {
-        document.querySelector('#curve1').setAttribute('visible', 'true');
         document.querySelector('#curve2').setAttribute('visible', 'false');
-        document.querySelector('#curve3').setAttribute('visible', 'true');
-        document.querySelector('#curve1').setAttribute('opacity', '0.7');
-        document.querySelector('#curve2').setAttribute('opacity', '0.7');
-        document.querySelector('#curve3').setAttribute('opacity', '0.7');
-        document.querySelector('#text-1').setAttribute('visible', 'true');
-        document.querySelector('#text-2').setAttribute('visible', 'false');
-        document.querySelector('#text-3').setAttribute('visible', 'true');
-        document.querySelector('#text-1').setAttribute('opacity', '0.5');
-        document.querySelector('#text-3').setAttribute('opacity', '0.5');
+        document.querySelector('#curve3').setAttribute('visible', 'false');
         document.querySelector('#vigneron').setAttribute('visible', 'false');
         document.querySelector('#bouteille1').setAttribute('visible', 'false');
         document.querySelector('#bouteille2').setAttribute('visible', 'false');
-        document.querySelector('#bouteille3').setAttribute('visible', 'false');
         document.querySelector('#back').setAttribute('visible', 'true');
       });
-        document.querySelector('#curve3').addEventListener('click', function() {
-          document.querySelector('#curve1').setAttribute('visible', 'true');
-          document.querySelector('#curve2').setAttribute('visible', 'true');
-          document.querySelector('#curve3').setAttribute('visible', 'false');
-          document.querySelector('#curve1').setAttribute('opacity', '0.7');
-          document.querySelector('#curve2').setAttribute('opacity', '0.7');
-          document.querySelector('#curve3').setAttribute('opacity', '0.7');
-          document.querySelector('#text-1').setAttribute('visible', 'true');
-          document.querySelector('#text-2').setAttribute('visible', 'true');
-          document.querySelector('#text-3').setAttribute('visible', 'false');
-          document.querySelector('#text-1').setAttribute('opacity', '0.5');
-          document.querySelector('#text-2').setAttribute('opacity', '0.5');
-          document.querySelector('#vigneron').setAttribute('visible', 'false');
-          document.querySelector('#bouteille1').setAttribute('visible', 'false');
-          document.querySelector('#bouteille2').setAttribute('visible', 'false');
-          document.querySelector('#bouteille3').setAttribute('visible', 'false');
-          document.querySelector('#back').setAttribute('visible', 'true');
+    document.querySelector('#curve2').addEventListener('click', function() {
+        document.querySelector('#curve1').setAttribute('visible', 'false');
+        document.querySelector('#curve2').setAttribute('visible', 'false');
+        document.querySelector('#curve3').setAttribute('visible', 'false');
+        document.querySelector('#vigneron').setAttribute('visible', 'false');
+        document.querySelector('#bouteille1').setAttribute('visible', 'false');
+        document.querySelector('#bouteille2').setAttribute('visible', 'false');
+        document.querySelector('#back').setAttribute('visible', 'true');
+      });
+    document.querySelector('#curve3').addEventListener('click', function() {
+        document.querySelector('#curve1').setAttribute('visible', 'false');
+        document.querySelector('#curve2').setAttribute('visible', 'false');
+        document.querySelector('#curve3').setAttribute('visible', 'false');
+        document.querySelector('#vigneron').setAttribute('visible', 'false');
+        document.querySelector('#bouteille1').setAttribute('visible', 'false');
+        document.querySelector('#bouteille2').setAttribute('visible', 'false');
+        document.querySelector('#back').setAttribute('visible', 'true');
         });
     document.querySelector('#back').addEventListener('click', function() {
       document.querySelector('#curve1').setAttribute('visible', 'true');
       document.querySelector('#curve2').setAttribute('visible', 'true');
       document.querySelector('#curve3').setAttribute('visible', 'true');
-      document.querySelector('#curve1').setAttribute('opacity', '1');
-      document.querySelector('#curve2').setAttribute('opacity', '1');
-      document.querySelector('#curve3').setAttribute('opacity', '1');
-      document.querySelector('#text-1').setAttribute('visible', 'true');
-      document.querySelector('#text-2').setAttribute('visible', 'true');
-      document.querySelector('#text-3').setAttribute('visible', 'true');
-      document.querySelector('#text-1').setAttribute('opacity', '1');
-      document.querySelector('#text-2').setAttribute('opacity', '1');
-      document.querySelector('#text-3').setAttribute('opacity', '1');
       document.querySelector('#vigneron').setAttribute('visible', 'true');
-      document.querySelector('#bouteille1').setAttribute('visible', 'true');
+        document.querySelector('#bouteille1').setAttribute('visible', 'true');
       document.querySelector('#bouteille2').setAttribute('visible', 'true');
-      document.querySelector('#bouteill11e3').setAttribute('visible', 'true');
       document.querySelector('#back').setAttribute('visible', 'false');
     });
-
     </script>
 </body>
 </html>
