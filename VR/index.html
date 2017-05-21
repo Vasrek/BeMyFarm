@@ -191,6 +191,16 @@
         document.querySelector('#interview').setAttribute('visible', 'true');
         document.querySelector('#back').setAttribute('visible', 'true');
       });
+	document.querySelector('#play').addEventListener('click', function() {
+			if(!self.video_el.paused){
+                this.setAttribute("src", self.i-play);
+                self.video_el.pause();
+            }
+			else {
+                this.setAttribute("src", self.i-pause);
+                self.video_el.play();
+            }
+	});	
     </script>
 </body>
 </html>
