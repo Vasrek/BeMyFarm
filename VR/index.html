@@ -33,7 +33,7 @@
       <img id="i-play" crossorigin="anonymous" src="image/i-play.png">
 	    <img id="i-drone" crossorigin="anonymous" src="image/vue aerienne.png">
 	    <video id="v-drone" autoplay loop src="Video/drone vignes.mp4" webkit-playsinline>
-      <video id="v-interview" autoplay loop="true" muted src="video/itw_winemaker_videoHD.mp4"></video>
+      <video id="v-vid" autoplay loop="true" muted src="video/itw_winemaker_videoHD.mp4"></video>
 	</a-asset>
 
     <!-- SkyBox -->
@@ -46,16 +46,16 @@
     <a-image id="bouteille-2" src="#bouteille" width="1" height="4" position="-1 2 8" rotation="0 0 0" event-set__1="_event: mouseenter; src: #bouteilleHOVER" event-set__2="_event: mouseleave; src: #bouteille"></a-image>
     <a-image id="bouteille-3" src="#bouteille2" width="1" height="4" position="3 2 8" rotation="0 0 0" event-set__1="_event: mouseenter; src: #bouteille2HOVER" event-set__2="_event: mouseleave; src: #bouteille2"></a-image>
     <a-image id="back" src="#i-back" width="1" height="1" position="-9.687 0.000 -0.285" rotation="0 83.824 0" visible="false" set-image="on: click; target: #fond; src: #i-fond"></a-image>
-    <a-image id="play" src="#i-play" width="1" height="1" position="0 0.000 -2" rotation="0 0 0" visible="tru"></a-image>
+    <a-image id="play" src="#i-play" width="1" height="1" position="0 0.000 -2" rotation="0 0 0" visible="true"></a-image>
 
 	<!-- Video 360° -->
-    <a-image id="drone" src="#i-drone" width="4" height="6" position="0 10 0" rotation="50 0 0" set-image="on: click; target: #fond; src: #v-drone">
+    <a-image id="drone" src="#i-drone" width="4" height="6" scale="1.7 1.262 1" position="-10 10 0" rotation="50 90 0" set-image="on: click; target: #fond; src: #v-drone">
 	  <a-animation attribute="material.opacity" begin="mouseenter" from="0.7" to="1" dur="300"></a-animation>
       <a-animation attribute="material.opacity" begin="mouseleave" from="1" to="0.7" dur="300"></a-animation>
 	</a-image>
 
-  <!-- video interview  -->
-  <a-video id="interview" src="#v-interview" width="16" height="9" position="0 2 -10" visible="false"></a-video>
+  <!-- video vid  -->
+  <a-video id="vid" src="#v-vid" width="16" height="9" position="0 2 -10" visible="false"></a-video>
 
     <!-- Curved image {onclick} skybox change-->
     <a-curvedimage id="curve1" class="link" src="#i-360-1-black" height="1" radius="6" theta-length="20" rotation="0 83.996 0" scale="4 4 2" position="2.739 6 6.137" opacity="0.7"
@@ -96,6 +96,9 @@
   </a-scene>
 
   <script type="text/javascript">
+    var vid = document.getElementById('v-drone');
+  console.log(vid);
+
     document.querySelector('#curve1').addEventListener('click', function() {
       document.querySelector('#curve1').setAttribute('visible', 'false');
         document.querySelector('#curve2').setAttribute('visible', 'true');
@@ -137,7 +140,7 @@
         document.querySelector('#bouteille1').setAttribute('visible', 'true');
         document.querySelector('#bouteille-2').setAttribute('visible', 'true');
 	     	document.querySelector('#bouteille-3').setAttribute('visible', 'true');
-        document.querySelector('#interview').setAttribute('visible', 'false');
+        document.querySelector('#vid').setAttribute('visible', 'false');
         document.querySelector('#back').setAttribute('visible', 'false');
         document.querySelector('#cadreBottles').setAttribute('visible', 'true');
       });
@@ -151,7 +154,11 @@
 		    document.querySelector('#bouteille-3').setAttribute('visible', 'false');
 		    document.querySelector('#cadreBottles').setAttribute('visible', 'false');
         document.querySelector('#back').setAttribute('visible', 'true');
-        document.querySelector('#interview').setAttribute('visible', 'false');
+        document.querySelector('#vid').setAttribute('visible', 'false');
+        document.querySelector('#bullshit').setAttribute('visible', 'true');
+        document.querySelector('#bullshit2').setAttribute('visible', 'true');
+        document.querySelector('#bullshit3').setAttribute('visible', 'true');
+        document.querySelector('#bullshit4').setAttribute('visible', 'true');
       });
     document.querySelector('#bouteille1').addEventListener('click', function() {
         document.querySelector('#popupbouteille1').setAttribute('visible', 'true');
@@ -191,19 +198,17 @@
         document.querySelector('#bouteille1').setAttribute('visible', 'false');
         document.querySelector('#bouteille-2').setAttribute('visible', 'false');
 		    document.querySelector('#bouteille-3').setAttribute('visible', 'false');
-        document.querySelector('#interview').setAttribute('visible', 'true');
+        document.querySelector('#vid').setAttribute('visible', 'true');
         document.querySelector('#back').setAttribute('visible', 'true');
       });
-	document.querySelector('#play').addEventListener('click', function() {
-			if(!self.Video_el.paused){
-                this.setAttribute("src", self.i-play);
-                self.Video_el.pause();
-            }
-			else {
-                this.setAttribute("src", self.i-pause);
-                self.Video_el.play();
-            }
-	});
+
+
+document.querySelector('#play').addEventListener('click', function(e){
+  document.querySelector('#play').setAttribute('visible', 'false');
+  vid.play();
+
+}, false);
+
     </script>
 </body>
 </html>
