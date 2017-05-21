@@ -41,9 +41,9 @@
     <!-- Image -->
     <a-image id="vigneron" src="#i-vigneron-black" width="4" height="6" position="0 2 -7"   event-set__1="_event: mouseenter; src: #i-vigneron" event-set__2="_event: mouseleave; src: #i-vigneron-black"></a-image>
     <a-image id="cadreBottles" src="#cadre" scale="14 8.5 0" position="-0.85 1 8.623" rotation="0 180 0"></a-image>
-    <a-image id="bouteille1" src="#bouteille" width="1" height="4" position="-5 2 8" rotation="0 0 0" event-set__1="_event: mouseenter; src: #bouteilleHOVER" event-set__2="_event: mouseleave; src: #bouteille"></a-image>
-    <a-image id="bouteille-2" src="#bouteille2" width="1" height="4" position="-1 2 8" rotation="0 0 0" event-set__1="_event: mouseenter; src: #bouteille2HOVER" event-set__2="_event: mouseleave; src: #bouteille2"></a-image>
-    <a-image id="bouteille-3" src="#bouteille" width="1" height="4" position="3 2 8" rotation="0 0 0" event-set__1="_event: mouseenter; src: #bouteilleHOVER" event-set__2="_event: mouseleave; src: #bouteille"></a-image>
+    <a-image id="bouteille1" src="#bouteille2" width="1" height="4" position="-5 2 8" rotation="0 0 0" event-set__1="_event: mouseenter; src: #bouteille2HOVER" event-set__2="_event: mouseleave; src: #bouteille2"></a-image>
+    <a-image id="bouteille-2" src="#bouteille" width="1" height="4" position="-1 2 8" rotation="0 0 0" event-set__1="_event: mouseenter; src: #bouteilleHOVER" event-set__2="_event: mouseleave; src: #bouteille"></a-image>
+    <a-image id="bouteille-3" src="#bouteille2" width="1" height="4" position="3 2 8" rotation="0 0 0" event-set__1="_event: mouseenter; src: #bouteille2HOVER" event-set__2="_event: mouseleave; src: #bouteille2"></a-image>
     <a-image id="back" src="#i-back" width="1" height="1" position="-4 0 -3" visible="false" set-image="on: click; target: #fond; src: #i-fond"></a-image>
 
 	<!-- Video 360° -->
@@ -163,10 +163,10 @@
         document.querySelector('#closePopup2').setAttribute('visible', 'true');
     });
     document.querySelector('#bouteille-3').addEventListener('click', function() {
-        document.querySelector('#popupbouteille1').setAttribute('visible', 'false');
-        document.querySelector('#closePopup1').setAttribute('visible', 'false');
-        document.querySelector('#popupbouteille2').setAttribute('visible', 'true');
-        document.querySelector('#closePopup2').setAttribute('visible', 'true');
+        document.querySelector('#popupbouteille1').setAttribute('visible', 'true');
+        document.querySelector('#closePopup1').setAttribute('visible', 'true');
+        document.querySelector('#popupbouteille2').setAttribute('visible', 'false');
+        document.querySelector('#closePopup2').setAttribute('visible', 'false');
     });
     document.querySelector('#closePopup1').addEventListener('click', function() {
         document.querySelector('#popupbouteille1').setAttribute('visible', 'false');
