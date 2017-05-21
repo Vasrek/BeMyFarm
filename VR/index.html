@@ -14,6 +14,7 @@
       <img id="i-vigneron" crossorigin="anonymous" src="image/producteur.png">
       <img id="i-vigneron-black" crossorigin="anonymous" src="image/producteur_black.png">
       <img id="bouteille" crossorigin="anonymous" src="image/bouteille blanc_nohalo.png">
+      <img id="bouteille2" crossorigin="anonymous" src="image/bouteille rouge_nohalo.png">
       <img id="bouteilleHOVER" crossorigin="anonymous" src="image/bouteille blanc_halo.png">
       <img id="bouteille2HOVER" crossorigin="anonymous" src="image/bouteille rouge_halo.png">
       <img id="i-fond" crossorigin="anonymous" src="image/Photo Intro.png">
@@ -185,10 +186,12 @@
         document.querySelector('#play2').setAttribute('visible', 'false');
     });
     document.querySelector('#bouteille-2').addEventListener('click', function() {
-        document.querySelector('#popupbouteille1').setAttribute('visible', 'true');
-        document.querySelector('#closePopup1').setAttribute('visible', 'true');
+        document.querySelector('#popupbouteille1').setAttribute('visible', 'false');
+        document.querySelector('#closePopup1').setAttribute('visible', 'false');
         document.querySelector('#play').setAttribute('visible', 'false');
         document.querySelector('#play2').setAttribute('visible', 'false');
+          window.open('https://vins-champagnes.carrefour.fr/chateau-de-courbon-graves-blanc-2015-16764-fr-eur-fr.html');
+        
     });
     document.querySelector('#bouteille-3').addEventListener('click', function() {
         document.querySelector('#popupbouteille1').setAttribute('visible', 'true');
