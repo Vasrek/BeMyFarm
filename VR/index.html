@@ -25,9 +25,7 @@
       <img id="i-360-3-black" crossorigin="anonymous" src="image/Fabrication_Noir.png">
       <img id="i-back" crossorigin="anonymous" src="image/back.png">
       <img id="popup1" crossorigin="anonymous" src="image/etiquette_vin.png">
-      <img id="popup2" crossorigin="anonymous" src="image/etiquette_vin_2.png">
       <img id="close1" crossorigin="anonymous" src="image/popupbouteille1X.png">
-      <img id="close2" crossorigin="anonymous" src="image/popupbouteille2X.png">
       <img id="cadre" crossorigin="anonymous" src="image/cadre.png">
       <img id="i-play" crossorigin="anonymous" src="image/i-play.png">
 	  <img id="i-drone" crossorigin="anonymous" src="image/vue aerienne.png">
@@ -183,40 +181,24 @@
     document.querySelector('#bouteille1').addEventListener('click', function() {
         document.querySelector('#popupbouteille1').setAttribute('visible', 'true');
         document.querySelector('#closePopup1').setAttribute('visible', 'true');
-        document.querySelector('#popupbouteille2').setAttribute('visible', 'false');
-        document.querySelector('#closePopup2').setAttribute('visible', 'false');
         document.querySelector('#play').setAttribute('visible', 'false');
         document.querySelector('#play2').setAttribute('visible', 'false');
     });
     document.querySelector('#bouteille-2').addEventListener('click', function() {
-        document.querySelector('#popupbouteille1').setAttribute('visible', 'false');
-        document.querySelector('#closePopup1').setAttribute('visible', 'false');
-        document.querySelector('#popupbouteille2').setAttribute('visible', 'true');
-        document.querySelector('#closePopup2').setAttribute('visible', 'true');
+        document.querySelector('#popupbouteille1').setAttribute('visible', 'true');
+        document.querySelector('#closePopup1').setAttribute('visible', 'true');
         document.querySelector('#play').setAttribute('visible', 'false');
         document.querySelector('#play2').setAttribute('visible', 'false');
     });
     document.querySelector('#bouteille-3').addEventListener('click', function() {
         document.querySelector('#popupbouteille1').setAttribute('visible', 'true');
         document.querySelector('#closePopup1').setAttribute('visible', 'true');
-        document.querySelector('#popupbouteille2').setAttribute('visible', 'false');
-        document.querySelector('#closePopup2').setAttribute('visible', 'false');
         document.querySelector('#play').setAttribute('visible', 'false');
         document.querySelector('#play2').setAttribute('visible', 'false');
     });
     document.querySelector('#closePopup1').addEventListener('click', function() {
         document.querySelector('#popupbouteille1').setAttribute('visible', 'false');
         document.querySelector('#closePopup1').setAttribute('visible', 'false');
-        document.querySelector('#popupbouteille2').setAttribute('visible', 'false');
-        document.querySelector('#closePopup2').setAttribute('visible', 'false');
-        document.querySelector('#play').setAttribute('visible', 'false');
-        document.querySelector('#play2').setAttribute('visible', 'false');
-    });
-    document.querySelector('#closePopup2').addEventListener('click', function() {
-        document.querySelector('#popupbouteille1').setAttribute('visible', 'false');
-        document.querySelector('#closePopup1').setAttribute('visible', 'false');
-        document.querySelector('#popupbouteille2').setAttribute('visible', 'false');
-        document.querySelector('#closePopup2').setAttribute('visible', 'false');
         document.querySelector('#play').setAttribute('visible', 'false');
         document.querySelector('#play2').setAttribute('visible', 'false');
     });
