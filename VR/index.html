@@ -30,6 +30,7 @@
       <img id="close1" crossorigin="anonymous" src="image/popupbouteille1X.png">
       <img id="close2" crossorigin="anonymous" src="image/popupbouteille2X.png">
       <img id="cadre" crossorigin="anonymous" src="image/cadre.png">
+      <img id="i-play" crossorigin="anonymous" src="image/i-play.png">
 	    <img id="i-drone" crossorigin="anonymous" src="image/vue aerienne.png">
 	    <video id="v-drone" autoplay loop src="Video/drone vignes.mp4" webkit-playsinline>
       <video id="v-interview" autoplay loop="true" muted src="video/itw_winemaker_videoHD.mp4"></video>
@@ -45,6 +46,7 @@
     <a-image id="bouteille-2" src="#bouteille" width="1" height="4" position="-1 2 8" rotation="0 0 0" event-set__1="_event: mouseenter; src: #bouteilleHOVER" event-set__2="_event: mouseleave; src: #bouteille"></a-image>
     <a-image id="bouteille-3" src="#bouteille2" width="1" height="4" position="3 2 8" rotation="0 0 0" event-set__1="_event: mouseenter; src: #bouteille2HOVER" event-set__2="_event: mouseleave; src: #bouteille2"></a-image>
     <a-image id="back" src="#i-back" width="1" height="1" position="-9.687 0.000 -0.285" rotation="0 83.824 0" visible="false" set-image="on: click; target: #fond; src: #i-fond"></a-image>
+    <a-image id="play" src="#i-play" width="1" height="1" position="0 0.000 -2" rotation="0 0 0" visible="tru"></a-image>
 
 	<!-- Video 360° -->
     <a-image id="drone" src="#i-drone" width="4" height="6" position="0 10 0" rotation="50 0 0" set-image="on: click; target: #fond; src: #v-drone">
@@ -149,6 +151,7 @@
 		    document.querySelector('#bouteille-3').setAttribute('visible', 'false');
 		    document.querySelector('#cadreBottles').setAttribute('visible', 'false');
         document.querySelector('#back').setAttribute('visible', 'true');
+        document.querySelector('#interview').setAttribute('visible', 'false');
       });
     document.querySelector('#bouteille1').addEventListener('click', function() {
         document.querySelector('#popupbouteille1').setAttribute('visible', 'true');
@@ -192,13 +195,13 @@
         document.querySelector('#back').setAttribute('visible', 'true');
       });
 	document.querySelector('#play').addEventListener('click', function() {
-			if(!self.video_el.paused){
+			if(!self.Video_el.paused){
                 this.setAttribute("src", self.i-play);
-                self.video_el.pause();
+                self.Video_el.pause();
             }
 			else {
                 this.setAttribute("src", self.i-pause);
-                self.video_el.play();
+                self.Video_el.play();
             }
 	});
     </script>
